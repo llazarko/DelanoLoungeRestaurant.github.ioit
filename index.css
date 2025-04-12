@@ -540,3 +540,25 @@ footer .container {
         grid-template-columns: 1fr;
     }
 }
+
+.footer-hours {
+  font-size: 0.9rem;
+  color: #fff; /* For dark footers */
+  margin: 10px 0;
+}
+
+.footer-hours h4 {
+  margin-bottom: 8px;
+  color: #e6b800; /* Gold accent */
+}
+
+.footer-hours ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-hours li span {
+  font-weight: 600;
+  display: inline-block;
+  width: 80px;
+}
