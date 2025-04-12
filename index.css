@@ -1,0 +1,542 @@
+/* Reset dhe stilizime bazë */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    line-height: 1.6;
+    color: #333;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+header {
+    background-color: #1a1a1a;
+    color: white;
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    font-size: 2rem;
+    color: #e6b800; /* Ngjyrë ari */
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 30px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #e6b800;
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+/* Stilizimi i logos */
+.logo img {
+    height: 80px; /* Përshtatni lartësinë sipas nevojës */
+    width: auto;
+    transition: transform 0.3s;
+}
+
+.logo:hover img {
+    transform: scale(1.05);
+}
+
+/* Përshtatje për header */
+header .container {
+    align-items: center; /* Qendër vertikalisht */
+}
+
+/* Nëse logoja është e bardhë në sfond të errët */
+header {
+    background-color: #1a1a1a;
+}
+
+/* Hero Slider */
+.hero {
+    position: relative;
+    height: 80vh;
+    overflow: hidden;
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.slide-content {
+    position: absolute;
+    bottom: 100px;
+    left: 50px;
+    color: white;
+    max-width: 600px;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.slide-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 15px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.prev {
+    left: 20px;
+}
+
+.next {
+    right: 20px;
+}
+
+/* Stilizimi i seksionit "Rreth Nesh" */
+.about {
+    padding: 80px 0;
+    background-color: #fff;
+}
+
+.about .container {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.about-content {
+    flex: 1;
+}
+
+.about-image {
+    flex: 1;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.about-image img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.5s;
+}
+
+.about-image:hover img {
+    transform: scale(1.03);
+}
+
+.highlights {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.highlight-item {
+    text-align: center;
+    padding: 20px;
+    border-radius: 8px;
+    transition: all 0.3s;
+}
+
+.highlight-item:hover {
+    background-color: #f8f8f8;
+    transform: translateY(-5px);
+}
+
+.highlight-item i {
+    font-size: 2rem;
+    color: #e6b800;
+    margin-bottom: 10px;
+}
+
+/* Stilizimi i galerisë së menusë */
+.gallery-menu {
+    padding: 80px 0;
+    background-color: #f9f9f9;
+}
+
+.gallery-menu h2 {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.gallery-menu p {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #666;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.gallery-item {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    height: 300px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.overlay {
+    position: absolute;
+    bottom: -100%;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    transition: bottom 0.3s ease;
+    text-align: center;
+}
+
+.gallery-item:hover .overlay {
+    bottom: 0;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+.view-btn {
+    background-color: #e6b800;
+    color: #1a1a1a;
+    border: none;
+    padding: 8px 20px;
+    margin-top: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.view-btn:hover {
+    background-color: #ffd700;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .about .container {
+        flex-direction: column;
+    }
+    
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Menu */
+.menu {
+    padding: 80px 0;
+    background-color: #f9f9f9;
+}
+
+.menu h2 {
+    text-align: center;
+    margin-bottom: 50px;
+    color: #1a1a1a;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.menu-item {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.menu-item:hover {
+    transform: translateY(-10px);
+}
+
+.menu-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.menu-item h3 {
+    padding: 15px;
+    font-size: 1.3rem;
+}
+
+.menu-item p {
+    padding: 0 15px 15px;
+    color: #666;
+}
+
+.menu-item span {
+    display: block;
+    padding: 0 15px 15px;
+    font-weight: bold;
+    color: #e6b800;
+}
+
+/* Rezervime */
+.reservation {
+    background-color: #f5f5f5;
+    padding: 60px 0;
+}
+
+#reservation-form {
+    max-width: 600px;
+    margin: 0 auto;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.form-row {
+    display: flex;
+    gap: 20px;
+}
+
+.form-row .form-group {
+    flex: 1;
+}
+
+button[type="submit"] {
+    background-color: #e6b800;
+    color: #1a1a1a;
+    border: none;
+    padding: 15px 30px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 100%;
+    transition: background 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: #d4a700;
+}
+
+.reservation h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+#reservation-form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+#reservation-form input,
+#reservation-form textarea {
+    padding: 12px;
+    border: 1px solid #444;
+    background-color: #2a2a2a;
+    color: white;
+    border-radius: 5px;
+}
+
+#reservation-form textarea {
+    grid-column: 1 / -1;
+    min-height: 100px;
+}
+
+#reservation-form button {
+    grid-column: 1 / -1;
+    padding: 15px;
+    background-color: #e6b800;
+    color: #1a1a1a;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+#reservation-form button:hover {
+    background-color: #ffd700;
+}
+
+/* Kontakt */
+.contact {
+    padding: 80px 0;
+}
+
+.contact h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.contact-info p {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.contact-info i {
+    margin-right: 10px;
+    color: #e6b800;
+}
+
+.map {
+    height: 300px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Footer */
+footer {
+    background-color: #1a1a1a;
+    color: white;
+    padding: 30px 0;
+    text-align: center;
+}
+
+footer .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.social {
+    margin-top: 20px;
+}
+
+.social a {
+    color: white;
+    margin: 0 10px;
+    font-size: 1.5rem;
+    transition: color 0.3s;
+}
+
+.social a:hover {
+    color: #e6b800;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background-color: #1a1a1a;
+        flex-direction: column;
+        padding: 20px 0;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .slide-content {
+        left: 20px;
+        right: 20px;
+        max-width: 100%;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    #reservation-form {
+        grid-template-columns: 1fr;
+    }
+}
